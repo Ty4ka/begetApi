@@ -33,15 +33,13 @@ export class BegetAPI {
       })
     )
 
-    console.log(
-      await (
-        await fetch(
-          `https://api.beget.com/api/dns/changeRecords?login=${login}&passwd=${pass}&input_format=json&output_format=json&input_data=${inputData}`,
-          {
-            method: 'GET',
-          }
-        )
-      ).text()
-    )
+    return await (
+      await fetch(
+        `https://api.beget.com/api/dns/changeRecords?login=${login}&passwd=${pass}&input_format=json&output_format=json&input_data=${inputData}`,
+        {
+          method: 'GET',
+        }
+      )
+    ).text()
   }
 }
